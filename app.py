@@ -44,7 +44,7 @@ def main():
         st.markdown(f"### Hindi Translation:\n```\n{poem1_hi}\n{poem2_hi}\n```")
 
     # Footer with heart emoji
-    st.markdown("<br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
+    st.markdown("<br><br><br><br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
     st.markdown("Made by Anurag ❤️", unsafe_allow_html=True)
 
 if __name__ == "__main__":
