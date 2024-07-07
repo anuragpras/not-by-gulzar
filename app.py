@@ -47,7 +47,8 @@ def gen_poetry():
     bath_hi = bath["Hindi"][bath["English"].index(bath_en)]
 
     emo_en = random.choice(emotions["English"])
-    emo_hi = emotions["Hindi"][emotions["English"].index(emo_en)]
+    emo_hi_index = emotions["English"].index(emo_en)
+    emo_hi = emotions["Hindi"][emo_hi_index]
 
     ufo_en = random.choice(ufo["English"])
     ufo_hi = ufo["Hindi"][ufo["English"].index(ufo_en)]
