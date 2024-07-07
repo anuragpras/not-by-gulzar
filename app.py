@@ -82,7 +82,7 @@ def main():
     if st.button("Generate Poetry"):
         poem_en, poem_hi = gen_poetry()
         st.markdown(f"### English:\n```\n{poem_en}\n```")
-        st.markdown(f"### Hindi Translation:\n```\n{poem_hi}\n```")
+        st.markdown(f"### Hindi:\n```\n{poem_hi}\n```")
 
     # Footer with heart emoji
     st.markdown("<br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
