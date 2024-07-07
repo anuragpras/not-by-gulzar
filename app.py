@@ -69,14 +69,6 @@ def main():
     st.title("Gulzar Inspired Poetry Generator")
     st.subheader("Generate poetry inspired by a poetic formula")
 
-    # Add custom CSS to hide the GitHub icon
-    hide_github_icon = """
-    #GithubIcon {
-      visibility: hidden;
-    }
-    """
-    st.markdown(hide_github_icon, unsafe_allow_html=True)
-
     # Apply dark mode styles
     st.markdown(
         """
@@ -100,6 +92,18 @@ def main():
     st.markdown("<br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
     st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
     st.markdown("p.s: don't take this seriously", unsafe_allow_html=True)
+
+    # Custom CSS to hide GitHub icon
+    st.markdown(
+        """
+        <style>
+        #GithubIcon {
+            display: none !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     main()
