@@ -3,8 +3,10 @@ import random
 
 # Function to generate random poetry with English and Hindi translations
 def generate_random_poetry():
-    # Your existing code for generating poetry
-    pass
+    # Placeholder function, replace with actual implementation
+    poem_en = "English poem"
+    poem_hi = "Hindi translation"
+    return poem_en, poem_hi
 
 # Streamlit app UI
 def main():
