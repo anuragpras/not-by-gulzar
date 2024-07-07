@@ -21,7 +21,7 @@ def generate_poetry():
 
 # Streamlit app UI
 def main():
-    st.title("Gulzar-Inspired Poetry Generator)")
+    st.title("Gulzar-Inspired Poetry Generator")
     st.subheader("Generate poetry inspired by a poetic formula!")
 
     # Apply dark mode styles
