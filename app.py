@@ -53,11 +53,12 @@ def gen_poetry():
     ufo_en = random.choice(ufo["English"])
     ufo_hi = ufo["Hindi"][ufo["English"].index(ufo_en)]
     
+    # Ensure the emotions are aligned correctly in both English and Hindi lines
     poem_en = f"{osc_en} hue {facial_en} se {nature_en} ka {bath_en}.\n"
     poem_en += f"{emo_en} hai mujhe tera wahi {ufo_en}."
 
     poem_hi = f"{osc_hi} हुए {facial_hi} से {nature_hi} का {bath_hi}।\n"
-    poem_hi += f"मुझे तेरा वही {ufo_hi} है।"
+    poem_hi += f"{emo_hi} मुझे तेरा वही {ufo_hi} है।"
     
     return poem_en, poem_hi
 
