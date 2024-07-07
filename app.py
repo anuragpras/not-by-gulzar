@@ -64,6 +64,8 @@ def gen_poetry():
 
 # Streamlit app UI
 def main():
+    st.set_page_config(page_title="Gulzar Inspired Poetry Generator", layout="centered", initial_sidebar_state="collapsed")
+
     st.title("Gulzar Inspired Poetry Generator")
     st.subheader("Generate poetry inspired by a poetic formula")
 
