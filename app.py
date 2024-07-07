@@ -47,13 +47,11 @@ def gen_poetry():
     bath_hi = bath["Hindi"][bath["English"].index(bath_en)]
 
     emo_en = random.choice(emotions["English"])
-    emo_hi_index = emotions["English"].index(emo_en)
-    emo_hi = emotions["Hindi"][emo_hi_index]
+    emo_hi = emotions["Hindi"][emotions["English"].index(emo_en)]
 
     ufo_en = random.choice(ufo["English"])
     ufo_hi = ufo["Hindi"][ufo["English"].index(ufo_en)]
     
-    # Ensure the emotions are aligned correctly in both English and Hindi lines
     poem_en = f"{osc_en} hue {facial_en} se {nature_en} ka {bath_en}.\n"
     poem_en += f"{emo_en} hai mujhe tera wahi {ufo_en}."
 
@@ -93,14 +91,11 @@ def main():
     st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
     st.markdown("p.s: don't take this seriously", unsafe_allow_html=True)
 
-    # Custom CSS to hide elements like GitHub icon, badges, main menu, footer, and header
+    # Custom CSS to hide elements like GitHub icon and badge
     hide_elements_css = """
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_,
+    #GithubIcon, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_,
     .viewerBadge_link__1S137, .viewerBadge_text__1JaDK {
         display: none !important;
-    }
-    #MainMenu, footer, header {
-        visibility: hidden !important;
     }
     """
     st.markdown(hide_elements_css, unsafe_allow_html=True)
