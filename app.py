@@ -93,19 +93,17 @@ def main():
     st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
     st.markdown("p.s: don't take this seriously", unsafe_allow_html=True)
 
-    # Custom CSS to hide elements like GitHub icon, badges, etc.
-    st.markdown(
-        """
-        <style>
-        .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-        .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-        .viewerBadge_text__1JaDK {
-            display: none !important;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    # Custom CSS to hide elements like GitHub icon, badges, main menu, footer, and header
+    hide_elements_css = """
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_,
+    .viewerBadge_link__1S137, .viewerBadge_text__1JaDK {
+        display: none !important;
+    }
+    #MainMenu, footer, header {
+        visibility: hidden !important;
+    }
+    """
+    st.markdown(hide_elements_css, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
