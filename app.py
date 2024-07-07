@@ -1,28 +1,69 @@
 import streamlit as st
 import random
 
-# Define lists of words for generating poetry
-oscillations = ["Thiraktey", "Simat-tey", "Jhulastey", "Duur jaana", "Paas aana", "Roshni phailana", "Gumm ho jaana"]
-facial_features = ["Nazron", "Hothon", "Nainon", "Gaalon", "Maathey"]
-natural_phenomena = ["Boond Oas", "Baarish", "Hawa"]
-bathroom_activities = ["Phisalna", "Girna", "Tapakna", "Ulajhna", "Sulajhna", "Nikalna", "Sawarna"]
-emotions = ["Yaad", "Darata", "Hasata", "Rulata"]
-ufo_movements = ["Duur jaana", "Paas aana", "Roshni phailana", "Gumm ho jaana"]
+# Lists of words for each category (English and Hindi)
+osc = {
+    "English": ["Thiraktey", "Simat-tey", "Jhulastey", "Laharatey", "Khanaktey"],
+    "Hindi": ["थिरकते", "सिमट-ते", "झुलसते", "लहराते", "खनकते"]
+}
+
+facial = {
+    "English": ["Nazron", "Hothon", "Nainon", "Gaalon", "Maathey"],
+    "Hindi": ["नजरों", "होठों", "नैनों", "गालों", "माथे"]
+}
+
+nature = {
+    "English": ["Boond", "Oas", "Baarish", "Hawa"],
+    "Hindi": ["बूंद", "ओस", "बारिश", "हवा"]
+}
+
+bath = {
+    "English": ["Phisalna", "Girna", "Tapakna", "Ulajhna", "Sulajhna", "Nikalna", "Sawarna"],
+    "Hindi": ["फिसलना", "गिरना", "टपकना", "उलझना", "सुलझना", "निकलना", "सवारना"]
+}
+
+emotions = {
+    "English": ["Yaad", "Darata", "Hasata", "Rulata"],
+    "Hindi": ["याद", "डराता", "हँसाता", "रुलाता"]
+}
+
+ufo = {
+    "English": ["Duur jaana", "Paas aana", "Roshni phailana", "Gumm ho jaana"],
+    "Hindi": ["दूर जाना", "पास आना", "रोशनी फैलाना", "गुम हो जाना"]
+}
 
 # Function to generate random poetry with English and Hindi translations
-def generate_poetry():
-    line1_en = f"{random.choice(oscillations)} hue {random.choice(facial_features)} se {random.choice(natural_phenomena)} ka {random.choice(bathroom_activities)}."
-    line1_hi = f"{random.choice(oscillations)} हुए {random.choice(facial_features)} से {random.choice(natural_phenomena)} का {random.choice(bathroom_activities)}।"
+def gen_poetry():
+    osc_en = random.choice(osc["English"])
+    osc_hi = osc["Hindi"][osc["English"].index(osc_en)]
 
-    line2_en = f"{random.choice(emotions)} hai mujhe tera wahi {random.choice(ufo_movements)}"
-    line2_hi = f"{random.choice(emotions)} है मुझे तेरा वही {random.choice(ufo_movements)}"
+    facial_en = random.choice(facial["English"])
+    facial_hi = facial["Hindi"][facial["English"].index(facial_en)]
 
-    return (line1_en, line1_hi), (line2_en, line2_hi)
+    nature_en = random.choice(nature["English"])
+    nature_hi = nature["Hindi"][nature["English"].index(nature_en)]
+
+    bath_en = random.choice(bath["English"])
+    bath_hi = bath["Hindi"][bath["English"].index(bath_en)]
+
+    emo_en = random.choice(emotions["English"])
+    emo_hi = emotions["Hindi"][emotions["English"].index(emo_en)]
+
+    ufo_en = random.choice(ufo["English"])
+    ufo_hi = ufo["Hindi"][ufo["English"].index(ufo_en)]
+    
+    poem_en = f"{osc_en} hue {facial_en} se {nature_en} ka {bath_en}.\n"
+    poem_en += f"{emo_en} hai mujhe tera wahi {ufo_en}."
+
+    poem_hi = f"{osc_hi} हुए {facial_hi} से {nature_hi} का {bath_hi}।\n"
+    poem_hi += f"मुझे तेरा वही {ufo_hi} है।"
+    
+    return poem_en, poem_hi
 
 # Streamlit app UI
 def main():
-    st.title("Gulzar-Inspired Poetry Generator")
-    st.subheader("Generate poetry inspired by a poetic formula!")
+    st.title("Whispers of Verse")
+    st.subheader("Explore the echoes of poetic randomness!")
 
     # Apply dark mode styles
     st.markdown(
@@ -39,13 +80,13 @@ def main():
 
     # Button to generate poem
     if st.button("Generate Poetry"):
-        (poem1_en, poem1_hi), (poem2_en, poem2_hi) = generate_poetry()
-        st.markdown(f"### English:\n```\n{poem1_en}\n{poem2_en}\n```")
-        st.markdown(f"### Hindi Translation:\n```\n{poem1_hi}\n{poem2_hi}\n```")
+        poem_en, poem_hi = gen_poetry()
+        st.markdown(f"### English:\n```\n{poem_en}\n```")
+        st.markdown(f"### Hindi Translation:\n```\n{poem_hi}\n```")
 
     # Footer with heart emoji
-    st.markdown("<br><br><br><br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
-    st.markdown("Made by Anurag ❤️", unsafe_allow_html=True)
+    st.markdown("<br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
+    st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
