@@ -91,14 +91,5 @@ def main():
     st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
     st.markdown("p.s: don't take this seriously", unsafe_allow_html=True)
 
-    # Custom CSS to hide elements like GitHub icon and badge
-    hide_elements_css = """
-    #GithubIcon, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_,
-    .viewerBadge_link__1S137, .viewerBadge_text__1JaDK {
-        display: none !important;
-    }
-    """
-    st.markdown(hide_elements_css, unsafe_allow_html=True)
-
 if __name__ == "__main__":
     main()
