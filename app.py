@@ -87,6 +87,7 @@ def main():
     # Footer with heart emoji
     st.markdown("<br><br><br>", unsafe_allow_html=True)  # Add some space for the footer
     st.markdown("Created by Anurag ❤️", unsafe_allow_html=True)
+    st.markdown("p.s : don't take this seriously", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
