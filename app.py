@@ -35,22 +35,28 @@ ufo = {
 # Function to generate random poetry with English and Hindi translations
 def gen_poetry():
     osc_en = random.choice(osc["English"])
-    osc_hi = random.choice(osc["Hindi"])
+    osc_index = osc["English"].index(osc_en)
+    osc_hi = osc["Hindi"][osc_index]
 
     facial_en = random.choice(facial["English"])
-    facial_hi = random.choice(facial["Hindi"])
+    facial_index = facial["English"].index(facial_en)
+    facial_hi = facial["Hindi"][facial_index]
 
     nature_en = random.choice(nature["English"])
-    nature_hi = random.choice(nature["Hindi"])
+    nature_index = nature["English"].index(nature_en)
+    nature_hi = nature["Hindi"][nature_index]
 
     bath_en = random.choice(bath["English"])
-    bath_hi = random.choice(bath["Hindi"])
+    bath_index = bath["English"].index(bath_en)
+    bath_hi = bath["Hindi"][bath_index]
 
     emo_en = random.choice(emotions["English"])
-    emo_hi = random.choice(emotions["Hindi"])
+    emo_index = emotions["English"].index(emo_en)
+    emo_hi = emotions["Hindi"][emo_index]
 
     ufo_en = random.choice(ufo["English"])
-    ufo_hi = random.choice(ufo["Hindi"])
+    ufo_index = ufo["English"].index(ufo_en)
+    ufo_hi = ufo["Hindi"][ufo_index]
     
     poem_en = f"{osc_en} hue {facial_en} se {nature_en} ka {bath_en}.\n"
     poem_en += f"{emo_en} hai mujhe tera wahi {ufo_en}."
