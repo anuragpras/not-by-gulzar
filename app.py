@@ -3,8 +3,8 @@ import random
 
 # Lists of words for each category (English and Hindi)
 osc = {
-    "English": ["Thiraktey", "Simat-tey", "Jhulastey",],
-    "Hindi": ["थिरकते", "सिमट-ते", "झुलसते", ]
+    "English": ["Thiraktey", "Simat-tey", "Jhulastey"],
+    "Hindi": ["थिरकते", "सिमट-ते", "झुलसते" ]
 }
 
 facial = {
