@@ -4,7 +4,7 @@ import random
 # Lists of words for each category (English and Hindi)
 osc = {
     "English": ["Thiraktey", "Simat-tey", "Jhulastey"],
-    "Hindi": ["थिरकते", "सिमट-ते", "झुलसते" ]
+    "Hindi": ["थिरकते", "सिमट-ते", "झुलसते"]
 }
 
 facial = {
@@ -35,28 +35,28 @@ ufo = {
 # Function to generate random poetry with English and Hindi translations
 def gen_poetry():
     osc_en = random.choice(osc["English"])
-    osc_hi = osc["Hindi"][osc["English"].index(osc_en)]
+    osc_hi = random.choice(osc["Hindi"])
 
     facial_en = random.choice(facial["English"])
-    facial_hi = facial["Hindi"][facial["English"].index(facial_en)]
+    facial_hi = random.choice(facial["Hindi"])
 
     nature_en = random.choice(nature["English"])
-    nature_hi = nature["Hindi"][nature["English"].index(nature_en)]
+    nature_hi = random.choice(nature["Hindi"])
 
     bath_en = random.choice(bath["English"])
-    bath_hi = bath["Hindi"][bath["English"].index(bath_en)]
+    bath_hi = random.choice(bath["Hindi"])
 
     emo_en = random.choice(emotions["English"])
-    emo_hi = emotions["Hindi"][emotions["English"].index(emo_en)]
+    emo_hi = random.choice(emotions["Hindi"])
 
     ufo_en = random.choice(ufo["English"])
-    ufo_hi = ufo["Hindi"][ufo["English"].index(ufo_en)]
+    ufo_hi = random.choice(ufo["Hindi"])
     
     poem_en = f"{osc_en} hue {facial_en} se {nature_en} ka {bath_en}.\n"
     poem_en += f"{emo_en} hai mujhe tera wahi {ufo_en}."
 
     poem_hi = f"{osc_hi} हुए {facial_hi} से {nature_hi} का {bath_hi}।\n"
-    poem_hi += f"{emo_hi} मुझे तेरा वही {ufo_hi} है।"
+    poem_hi += f"{emo_hi} है मुझे तेरा वही {ufo_hi}।"
     
     return poem_en, poem_hi
 
